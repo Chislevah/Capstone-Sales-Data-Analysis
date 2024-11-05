@@ -386,4 +386,9 @@ Actual Visualizations
 
 <img width="960" alt="Screenshot 2024-11-05 140647" src="https://github.com/user-attachments/assets/d2617baf-51d6-42d6-8ef1-ea96ec6e0bff">
 
+### Challenges Encountered while working on my Analysis
+I know must people encountered issues with light while working on their project, but as crazy as it may sound that wasn’t my biggest issue.
+1.	The very first problem I encountered was on excel. I’m using a 2007 version of excel and during the period of analyzing my data must short cut and functions were not available to me
+2.	The second issue I encountered was with my SQL Server. I can proudly say I’m using an updated version of SSMS but that too was a kind of problem in its own way. I recently changed the name of my system from the programmed name and renamed it to what I felt like calling it. Unknown to me this had an effect on my server name. All efforts made to rectify this problem were futile. This issue went on for weeks until the heavens finally smiled down on me and I was able to find that video on YouTube that was fated for me. Long story short I finally resolved the issue which was a mild one.
+3.	My bi issue was a minor one but atlas it’s still a problem. The bi class started up fun and easy up until we got to visualization, it was fun but it was kind of confusing especially when it came down to where I had had to impute data into the chart, where to place what was so very confusing. I ended up watching videos and doing research
 

@@ -1,20 +1,22 @@
 # Capstone-Sales-Data-Analysis
+---
 
 ## Project Topic: Capstone Sales Analysis
+---
 
 ### Sales Analysis Project Overview
-
+---
 The Sales Analysis Project is designed to provide a detailed examination of sales data to uncover valuable insights into customer behavior, product performance, and revenue trends. This project integrates Power BI, SQL, and Excel to create a robust framework for analyzing sales performance and identifying actionable business insights.
 
 ### Project Goals
-
+---
 - To visualize key sales metrics and trends using Power BI dashboards.
 - To utilize SQL for data extraction, manipulation, and advanced analysis.
 - To leverage Excel for additional data visualization and analysis, making insights more accessible for various stakeholders.
 - To help businesses make data-driven decisions to optimize sales strategies and improve performance.
 
 ### Key Components
-
+---
 1. Power BI Sales Dashboard:
    - Purpose: Create interactive and visually compelling dashboards to monitor sales performance.
    - Key Visuals:
@@ -46,9 +48,8 @@ The Sales Analysis Project is designed to provide a detailed examination of sale
   1. Conditional formatting for visual emphasis on key metrics.
   2. Use of formulas such as SUMIFS, AVERAGEIFS, and VLOOKUP for customized calculations.
 
-     
 ### Insights and Analysis Goals
-
+---
 1. Sales Trends: Identify periods of peak sales activity and seasonal patterns.
 2. Top Performing Products: Recognize which products drive the most revenue.
 3. Regional Insights: Analyze which regions contribute the most to total sales and identify growth opportunities.
@@ -56,35 +57,29 @@ The Sales Analysis Project is designed to provide a detailed examination of sale
 5. Revenue Growth: Track revenue growth over time and identify periods with significant changes.
    
 ### Importance of this Analysis
-
+---
 1. Sales Strategy Optimization: Use insights from the analysis to refine product offerings, pricing strategies, and marketing efforts.
 2. Performance Tracking: Monitor key sales performance indicators to ensure targets are being met.
 3. Resource Allocation: Identify high-performing regions or products to allocate resources effectively.
-4. Customer Relationship Management: Develop targeted campaigns based on customer buying behavior and preferences.
+4. Customer Relationship Management: Develop targeted campaigns based on customer buying behavior and preferences
 
 ### Intended Audience
-
+---
 1. Sales Managers who need to track sales performance and identify areas for growth.
 2. Data Analysts looking for examples of integrating Power BI, SQL, and Excel for comprehensive analysis.
 3. Business Strategists who require a data-driven approach to optimize sales operations.
 4. Students and Learners interested in developing sales analysis skills and understanding business intelligence techniques.
 
 ### Benefits of the Project
-
+---
 1. Reporting: Combines the visual power of Power BI, the query capabilities of SQL, and the versatility of Excel.
 2. Interactive Analysis: Users can explore data through interactive Power BI dashboards.
 3. Detailed Documentation: Clear explanations and guides on how the analyses were created and how to replicate them.
 4. Actionable Insights: Provides data-driven insights that can influence business decisions and improve sales outcomes.
 5. This project serves as a complete example of how to use business intelligence tools to perform a thorough sales analysis and turn raw data into actionable insights.
 
-### Additional Analysis Ideas
-
-- Revenue Trends by Seasonality: Use time intelligence functions in DAX to create year-over-year and month-over-month comparisons.
-- Customer Segmentation: Analyze customers by total revenue contributed to understand high-value vs. low-value customers.
-- Sales Forecasting: Use built-in forecasting tools in Power BI to project future revenue based on historical data.
-
 #### Microsoft Excel Analysis
-
+---
 To analyze my dataset in Excel, I ran various analyses. I began by creating some new columns which are the total revenue column and the transaction category column.
 
 Total Revenue
@@ -191,7 +186,7 @@ Excel visualization on my dashboard
 - Using a pie chart visualize order by quantity.
 
 #### SQL Data Analysis Report and Presentataion
-The idea was to create a fresh data base for my project, but then I changed my mind against it since we already had a database solely for anything that involved the incubator hub LITA. I then selected a new query since I was going to be running a fresh analysis on a fresh set of data. The next phase was to import my data into my SQL server. To do this I had to convert my excel file into a CSV format (command delimited) to convert the excel workbook into a CSV format is easy. 
+The idea was to create a fresh data base for my project, but then I changed my mind against it since we already had a database solely for anything that involved the incubator hub LITA. After choosing the database to work on, I then selected a new query since I was going to be running a fresh analysis on a fresh set of data. The next phase was to import my data into my SQL server. To do this I had to convert my excel file into a CSV format (command delimited). To convert the excel workbook into a CSV format is easy. Just;
 1.	Go to your file on excel,
 2.	 Select save as 
 3.	Change the file name if necessary
@@ -202,7 +197,7 @@ The idea was to create a fresh data base for my project, but then I changed my m
    
 Now the steps involved in importing my file into my database are as follows;
 - 	Right click on the database (LITA_DB).
-- 	Navigate to task
+- 	Navigate to task,
 - 	Select import flat files( for a CSV file) an argument box would appear
 - 	 Click on next
 -   Click on browse and navigate to the file you want to open
@@ -216,47 +211,54 @@ Now the steps involved in importing my file into my database are as follows;
 - 	Run query
 - 	 Results.
 
+### SQL Analysis and Report 
+---
 After importing my sales data into my database, the first query I ran was to be able to see the results of my newly imported table. 
 ```sql
 Select * from [dbo].[LITA Capstone Dataset SALES DATA SET]
 ```
-This showed me my table with the following fields; order_id, customer_id, products, region, order_date, quantity, unit_price, total_revenue. I got a total of 50,000 records. I spent time cleaning my data on Sql to prepare it for further analysis.
+This showed me my table with the following fields; order_id, customer_id, products, region, order_date, quantity, unit_price, total_revenue. I got a total of 50,000 records. I spent time cleaning my data on Sql to prepare it for further analysis. At the end of the cleaning analysis i got a total of 500 records. The cleaning process like i said before is necessary to ensure the reliability of any analysis that would be done on any dataset.
 
-Below is the SQL Server-compatible version of each query used in this analysis:
-1. Retrieve the total sales for each product category: Since the dataset has no explicit product category, products represents different categories:
+Below is the SQL Server-compatible version of each query I used in this analysis:
+1. Retrieve the total sales for each product category: Since the dataset has no explicit product category, products represents different categories.
 ```sql
 Select products, count(Total_Revenue) as numb_of_sales from [dbo].[LITA Capstone Dataset SALES DATA SET] group by Products
 ```
-2. Find the number of sales transactions in each region: This query will count the number of distinct orderids in each region:
+This analysis would retrieve the total number of sales for each and every listed product.
+2. Find the number of sales transactions in each region: This query will count the number of distinct orderids in each region so as to return a value for the total dales transactions under each region.
 ```sql
 Select region, count(Total_Revenue) number_of_sales_transactions_in_each_region from [dbo].[LITA Capstone Dataset SALES DATA SET] group by Region
 ```
-3. Highest-selling product by total sales value: To find the product with the highest total sales, sum the totalrevenue for each product and sort:
+3. Highest-selling product by total sales value: To find the product with the highest total sales, sum the totalrevenue for each product and sort.
 ```sql
 Select Products, sum(Total_Revenue) as total_sales from [dbo].[LITA Capstone Dataset SALES DATA SET] group by Products order by 1 desc
 ```
-4.	 Calculate total revenue per product: This query calculates the total revenue for each product:
+4.	 Calculate total revenue per product: This query calculates the total revenue generated by each product.
 ```sql
 Select Products, sum(Total_Revenue) as total_revenue_per_product from [dbo].[LITA Capstone Dataset SALES DATA SET] group by Products
 ```
-5. Calculate monthly sales totals for the current year: To calculate monthly sales, you can extract the month and year from the orderdate and filter for the current year:
+5. Calculate monthly sales totals for the current year: To calculate monthly sales, you can extract the month and year from the orderdate and filter for the current year.
 ```sql
 select YEAR(orderdate) as year, MONTH(orderdate) as month,SUM(total_revenue) as total_sales from [dbo].[LITA Capstone Dataset SALES DATA SET] where YEAR(OrderDate) =2024 group by YEAR(OrderDate),MONTH(OrderDate) order by year, month
 ```
-6.	Find the top 5 customers by total purchase amount: To find the top customers by total purchase value:
+6.	Find the top 5 customers by total purchase amount: To find the top customers by total purchase value i.e the top 5 highly rated customer.
 ```sql
 select top 5 Customer_Id,  SUM(Total_Revenue) as total_purchase_amt from [dbo].[LITA Capstone Dataset SALES DATA SET] group by Customer_Id order by total_purchase_amt desc
 ```
-7.  Calculate the percentage of total sales contributed by each region: This query calculates the percentage of sales per region compared to the total sales:
+7.  Calculate the percentage of total sales contributed by each region: This query calculates the percentage of sales per region compared to the total sales.
 ```sql
-WITH total_sales as( select SUM(total_revenue) as sumofrevenue from [dbo].[LITA Capstone Dataset SALES DATA SET]) Select region, SUM(total_revenue) as totalrevenue, (SUM (total_revenue) * 100.0 / (select sumofrevenue from total_sales)) as percentage_of_total_sales from [dbo].[LITA Capstone Dataset SALES DATA SET] group by region
+WITH total_sales as( select SUM(total_revenue) as sumofrevenue
+from [dbo].[LITA Capstone Dataset SALES DATA SET])
+Select region, SUM(total_revenue) as totalrevenue, (SUM (total_revenue) * 100.0 / (select sumofrevenue from total_sales)) as percentage_of_total_sales
+from [dbo].[LITA Capstone Dataset SALES DATA SET] group by region
 ```
-8.  Identify products with no sales in the last quarter: To find products with no sales in the last quarter, you need to compare the orderdate with the current quarter:
+8.  Identify products with no sales in the last quarter: To find products with no sales in the last quarter, you need to compare the orderdate with the current quarter.
 ```sql
 SELECT count(Total_Revenue) as total_sales_in_last_quarter, Products FROM  [dbo].[LITA Capstone Dataset SALES DATA SET] WHERE DATEPART(QUARTER, orderdate)=3 and YEAR(OrderDate)= 2024 GROUP BY Products.
 ```
+This analysis returned figures for products with sales. Any product without sales was exempted from the result.
 
-Some further analysis were also carried out as can be seen in the actual work and my screenshots
+Some further analysis were also carried out such as, churn rate, churned rate percentage, total order etcm. It be found in the actual work and seen from my screenshots.
 
 <img width="542" alt="Screenshot 2024-11-05 140607" src="https://github.com/user-attachments/assets/77d6696c-89da-469d-b66d-7aaf80a67e26">
 
@@ -270,25 +272,25 @@ Some further analysis were also carried out as can be seen in the actual work an
 
 
 #### Power BI Analysis Report
+---
+To effectively analyze the dataset in Power BI, you can create various calculations and visualizations to gain insights into sales and customer behavior. Below, I provide a more detailed explanation of the types of analyses, metrics, and visualizations to use, as well as their business implications after I had imported, transformed and loaded my data. 
 
-To effectively analyze the dataset in Power BI, you can create various calculations and visualizations to gain insights into sales and customer behavior. Below, I provide a more detailed explanation of the types of analyses, metrics, and visualizations you could use, as well as their business implications after I had imported transformed and loaded my data. 
-
-Comprehensive Calculations and Measures:
+Comprehensive Calculated columns and Measures:
 - Revenue: This column helps you understand the total income generated from sales. It’s critical for assessing overall business health.
  ```DAX
 Revenue= SalesData[Quantity] * SalesData[Unit Price]
 ```
--  Total Quantity:
+-  Total Quantity: Calculates the total quantity purchased. This is a measure.
 ```DAX
 Total Quantity = SUM(SalesData[Quantity])
 ```
-- Total Revenue:
+- Total Revenue: Calculated tye overall revenue generated.
 ```DAX
 Total Revenue= SUM(SalesData[Revenue]
 ```
 - Average Revenue per Order: This KPI is useful for understanding the typical revenue generated from each transaction. It’s a strong indicator of sales efficiency and helps in assessing whether high volumes correlate with high revenue or if the business relies on larger orders.
 ```DAX
-Order = AVERAGEX(SalesData, SalesData[Total Revenue])
+ARPO = AVERAGEX(SalesData, SalesData[Total Revenue])
 ```
 - Number of Unique Customers: Tracking this metric helps gauge market penetration and customer base growth. A growing number of unique customers indicates successful acquisition strategies, while stagnation may suggest the need for new marketing efforts.
 ```DAX
@@ -302,11 +304,11 @@ OR
 ```DAX
 YoY Revenue Change = DIVIDE( [Total Revenue] - CALCULATE([Total Revenue], SAMEPERIODLASTYEAR(SalesData[Order Date])), CALCULATE([Total Revenue], SAMEPERIODLASTYEAR(SalesData[Order Date])), 0)
 ```
-•	Revenue by Region :
+•	Revenue by Region : Calculates the total revenue by each region. This is an optional measure.
 ```DAX
 = SUMX(FILTER(SalesData, D[Region] = "Region Name"), SalesData[Total Revenue]).
 ```
-•	Total Orders:
+•	Total Orders: Calculate the total distinct order.
 ```DAX
 Total Orders= DISTINCTCOUNT(SalesData[Orderid])
 ```
@@ -392,3 +394,8 @@ I know must people encountered issues with light while working on their project,
 2.	The second issue I encountered was with my SQL Server. I can proudly say I’m using an updated version of SSMS but that too was a kind of problem in its own way. I recently changed the name of my system from the programmed name and renamed it to what I felt like calling it. Unknown to me this had an effect on my server name. All efforts made to rectify this problem were futile. This issue went on for weeks until the heavens finally smiled down on me and I was able to find that video on YouTube that was fated for me. Long story short I finally resolved the issue which was a mild one.
 3.	My bi issue was a minor one but atlas it’s still a problem. The bi class started up fun and easy up until we got to visualization, it was fun but it was kind of confusing especially when it came down to where I had had to impute data into the chart, where to place what was so very confusing. I ended up watching videos and doing research
 
+### Additional Analysis Ideas
+---
+- Revenue Trends by Seasonality: Use time intelligence functions in DAX to create year-over-year and month-over-month comparisons.
+- Customer Segmentation: Analyze customers by total revenue contributed to understand high-value vs. low-value customers.
+- Sales Forecasting: Use built-in forecasting tools in Power BI to project future revenue based on historical data.

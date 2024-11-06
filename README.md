@@ -24,9 +24,10 @@ The Sales Analysis Project is designed to provide a detailed examination of sale
      2. Top Products by Revenue: Bar chart highlighting the best-selling products.
      3. Regional Sales Performance: Heat map or column chart displaying sales by region.
      4. Sales KPIs: Cards showing total sales, average order value, and top customer segments.
-    - Features:
+  - Features:
     - Filters and slicers for interactive data exploration (e.g., by product, region, or sales period).
     - Drill-down capabilities to explore sales at different levels (e.g., region to city).
+    - Tool tips.
       
 2. SQL Queries for Data Analysis:
    - Purpose: Extract and analyze sales data from databases for deeper insights and reporting.
@@ -36,7 +37,7 @@ The Sales Analysis Project is designed to provide a detailed examination of sale
      3. Sales Trend Query: Extract data for trend analysis by month or quarter.
     - SQL Features:
       1. Use of GROUP BY, JOIN, and WHERE clauses for aggregating and filtering data.
-      2. Advanced queries using subqueries and window functions for ranking and trend analysis.
+      2. Advanced queries using subqueries for trend analysis.
             
 3. Excel Sales Analysis:
 - Purpose: Use Excel to create pivot tables, charts, and summary reports for quick analysis.
@@ -126,13 +127,13 @@ h.	Total Socks sold:
 ```excel
 =SUMIF(Products, Socks, Quantity).
 ```
- This formula I used for all the products sold, I only made changes to the criteria in order to suit each category of products.
+This formula Is used for all the products sold, I only made changes to the criteria in order to suit each category of products.
  
 i.	Sales by region: 
 ```excel
 =SUMIF(Region, west, Total Revenue)
 ```
- Formula applicable to all sales by various region with changes made on the criteria alone.
+Formula applicable to all sales by various region with changes made on the criteria alone.
 
 Pivot Table Presentation (insert a new sheet for pivot table presentation)
 
